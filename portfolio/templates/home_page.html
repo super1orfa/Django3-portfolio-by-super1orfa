@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<h1>{{ content }}</h1>
+<a href="{% url 'blog:blogs'  %}">Blog</a><br>
+<a href="{% static 'images/golestan.pdf' %}"><img src="{% static 'images/xx.jpg' %}" style="width: 350; height: 350;">
+</a>
+{% for project in project_models %}
+<h2>{{ project.title }}</h2>
+<h2>{{ project.description }}</h2>
+<a href="{{ project.url }}">
+    <img src="{{ project.image.url }}" style="width: 250; height: 250;">
+</a>
+{% endfor %}
+{% endblock %}

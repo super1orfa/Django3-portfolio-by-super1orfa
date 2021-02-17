@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+{% block content %}
+<h1>{{ content }}</h1>
+
+
+<h2 dir="rtl">{{ blog.title }}</h2>
+<p dir="rtl">{{ blog.description }}</p>
+<h5 dir="rtl">{{ blog.date_created }}</h5>
+<a  href="{% url 'blog:blogs' %}">برگشت به بلاگ</a>
+{% endblock %}
